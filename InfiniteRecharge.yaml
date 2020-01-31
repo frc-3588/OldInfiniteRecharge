@@ -62,7 +62,7 @@ Children:
           validators: &id003 [CANID]
           value: '2'
       Base: Talon SRX
-      Name: ClimbLiftMotor
+      Name: ClimbWingeMotor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
