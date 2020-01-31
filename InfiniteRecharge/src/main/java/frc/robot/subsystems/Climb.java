@@ -71,6 +71,8 @@ climbLiftMotor = new WPI_TalonSRX(2);
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public void setClimbLiftMotor(double power){
+        climbLiftMotor.set(power);
+    }
 }
 
