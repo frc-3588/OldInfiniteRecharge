@@ -38,7 +38,7 @@ public class ShooterOffCommand extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.shooter.setShooterPower(0.0);
+        Robot.shooter.setShooterPower(Robot.chassis.STOP);
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -38,13 +38,13 @@ public class AcquisitionOnCommand extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        Robot.acquisition.setAcquisitionPower(0.0);
+        Robot.acquisition.setAcquisitionPower(Robot.chassis.STOP);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.acquisition.setAcquisitionPower(0.8);
+        Robot.acquisition.setAcquisitionPower(Robot.acquisition.acquisitionPower);
     }
 
     // Make this return true when this Command no longer needs to run execute()

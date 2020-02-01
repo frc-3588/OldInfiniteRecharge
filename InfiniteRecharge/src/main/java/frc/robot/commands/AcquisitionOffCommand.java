@@ -38,7 +38,7 @@ public class AcquisitionOffCommand extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        
+        Robot.acquisition.setAcquisitionPower(Robot.chassis.STOP);
     }
 
     // Called repeatedly when this Command is scheduled to run
