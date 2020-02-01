@@ -43,8 +43,9 @@ public class DriveCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        Robot.chassis.setLeftMotors(Robot.oi.driverController.getRawAxis(1) * -1);
+        Robot.chassis.setRightMotors(Robot.oi.driverController.getRawAxis(3));
     }
-
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {

@@ -88,6 +88,7 @@ addChild("CameraServo",cameraServo);
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+
     public double getLFEncoderPosition(){
         return leftFrontEncoder.getPosition();
     }
@@ -99,6 +100,19 @@ addChild("CameraServo",cameraServo);
     }
     public double getRREncoderPosition(){
         return rightRearEncoder.getPosition();
+    }
+    
+    public void setRightMotors(double power){
+        rightFrontMotor.set(power);
+        rightRearMotor.set(power);
+    }
+    public void setLeftMotors(double power){
+        leftFrontMotor.set(power);
+        leftRearMotor.set(power);
+    }
+    
+    public double getAverageEncoderValue(){
+        return (leftFrontEncoder.getPosition() + rightFrontEncoder.getPosition() + rightRearEncoder.getPosition() + leftRearEncoder.getPosition())/4;
     }
 }
 
