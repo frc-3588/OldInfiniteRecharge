@@ -47,14 +47,14 @@ public class LowClimbCommand extends Command {
     @Override
     protected void execute() {
         Robot.climb.setClimbLiftMotor(Robot.chassis.NORMAL);
-        SmartDashboard.setDefaultNumber("High Climb Encoder Value", Robot.climb.getClimbLiftEncoder());
-        System.out.println("Low Climb Encoder Value" + Robot.climb.getClimbLiftEncoder());
+        SmartDashboard.setDefaultNumber("High Climb Encoder Value", Robot.climb.getClimbWinchEncoder());
+        System.out.println("Low Climb Encoder Value" + Robot.climb.getClimbWinchEncoder());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        if(Robot.climb.getClimbLiftEncoder() > MAX_ROTATIONS){
+        if(Robot.climb.getClimbWinchEncoder() > MAX_ROTATIONS){
             return true;
         }else{
             return false;
@@ -66,7 +66,7 @@ public class LowClimbCommand extends Command {
     protected void end() {
         Robot.climb.setClimbLiftMotor(Robot.chassis.STOP);
         //driver should have moved to the right position by now.
-        Robot.climb.setClimbWingeMotor(NORMAL_WINCH);
+        Robot.climb.setClimbWinchMotor(NORMAL_WINCH);
     }
 
     // Called when another command which requires one or more of the same
